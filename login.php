@@ -61,9 +61,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <form action="login.php" method="POST" id="loginform">
     
-<div class="mb-3 col-md-5">
+    <div class="mb-3 col-md-5">
         <label for="username" class="form-label">USERNAME</label>
-        <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="username" name="username">
     </div>
     <div class="mb-3 col-md-5">
         <label for="Password" class="form-label">Password</label>
@@ -77,4 +77,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 
 </body>
-</html>x`x` 
+</html>

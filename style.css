@@ -234,10 +234,33 @@ select{
     display: flex;
 }
 
+.tooltip .tooltiptext {
+    visibility: hidden;
+    /* width: 10px; */
+    /* height: 1.6rem; */
+    background-color: rgb(250, 248, 248);
+    color: rgb(20, 19, 19);
+    font-size: 0.5rem;
+    text-align: center;
+    border-radius: 6px;
+    /* padding: 5px 0; */
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
 
 /* //test login system css */
-
 a{
     text-decoration: none;
     }
@@ -249,27 +272,25 @@ a{
     #loginform{
         margin-left: 35%;
     }
-    #adduserform{
-        margin-left: 35%;
-    }
-    .card{
-        margin-top: 20px;
-    }
-    #loginnav{
+   #loginnav{
         margin-left: 30%;
     }
     #signupnav{
         margin-right: 30%;
     }
-    #adduserbtn{
-        margin-left: 85%;
-        text-decoration:none;
-       
-    }
-    #sbtn{
-        margin-left: 65%;
-    }
-
-
-    /* ///////////////////// */
-
+   
+/* #logout-btn{
+        background: red;
+        border: none;
+        left: inherit !important;
+        right: 0;
+        top: 54px !important;
+        margin: 0;
+        max-width: 151px;
+        padding: 5px 10px;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        min-width: 150px;
+        box-shadow: 0 3px 12px rgb(0 0 0 / 5%);
+} */
