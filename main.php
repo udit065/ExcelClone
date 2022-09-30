@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  require 'dbcon.php';
+
+  //if not loggedin session set OR session loggedin not true then redirect to login page
+  if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+      header("location: login.php");
+      exit;
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +27,31 @@
         .sheet-bottom-btn:hover {
         background-color: #058f58;
         color: #fff;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            /* width: 10px; */
+            /* height: 1.6rem; */
+            background-color: rgb(250, 248, 248);
+            color: rgb(20, 19, 19);
+            font-size: 0.5rem;
+            text-align: center;
+            border-radius: 6px;
+            /* padding: 5px 0; */
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+        
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
         }
     </style>
 </head>
@@ -111,8 +146,11 @@
         <!-- LOGOUT LOGO-->
         <div>
             <a href="#logout.php">
-                <img src="images/images.png" alt="User Avatar" style="height: 34px;float: right;">
+                <img src="images/images.png" alt="User Avatar" style="height: 34px;float: right;margin: 5px;">
             </a>
+            <?php
+                echo '<strong>Welcome '.$_SESSION['name'].'</strong>';
+                ?>
         </div>
     </div>
     <div class="formula_bar">

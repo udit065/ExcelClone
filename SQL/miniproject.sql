@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2022 at 01:05 PM
+-- Generation Time: Sep 30, 2022 at 09:37 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.5.30
 
@@ -41,7 +41,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `cpass`) VALUES
 (1, 'udit', 'u@123ygmail.com', '9910047440', '0001', '0001'),
-(2, 'vivek', 'its_chauhan@gmail.com', '8839547220', '0002', '0002');
+(2, 'vivek', 'its_chauhan@gmail.com', '8839547220', '0002', '0002'),
+(3, 'tarun', 'tarun@taudiyal32gmail.com', '9915826546', '0003', '0003'),
+(4, 'vikas', 'viksharma7@gmail.com', '7560443286', '0004', '0004');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
