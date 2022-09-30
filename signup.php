@@ -4,36 +4,39 @@ $showError = false;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include 'dbcon.php';
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $password = $_POST["password"];
-    $cpassword = $_POST["cpassword"];
+    $name = $_REQUEST["name"];
+    $email = $_REQUEST["email"];
+    $phone = $_REQUEST["phone"];
+    $password = $_REQUEST["password"];
+    $cpass = $_REQUEST["cpass"];
     // $exists = false;
-
+    
     //see if user already exits
-    $existsql = "select * from users where username = '$username'";
-     $eresult = mysqli_query($conn,$existsql);
-    $numrow = mysqli_num_rows($eresult);
+    // $existsql = "select * from users where name = '$name'";
+    //  $eresult = mysqli_query($conn,$existsql);
+    // $numrow = mysqli_num_rows($eresult);
 
-    if($numrow > 0){
-        $showError = 'USERNAME ALREADY EXITS!!';
-    }
-    else{
-
-        if(($password == $cpassword)){
-
-            $sql = "INSERT INTO `users` (`username`, `email`, `phone`,`password`, `cpassword`) VALUES ('$username', '$email', '$phone','$password', '$cpassword');";
+    // if($numrow > 0){
+    //     $showError = 'USERNAME ALREADY EXITS!!';
+    // }
+    // else{
+        
+        if(($password == $cpass)){
+            
+            $sql = "INSERT INTO `users` (`name`, `email`, `phone`, `password`, `cpass`,) VALUES ('$name', '$email', '$phone', '$password', '$cpass');";
             $result = mysqli_query($conn,$sql);
-
+            // echo $phone;
+            
             if($result){
-                $showAlert = true;
+                echo $cpass;
+                header ('location:main.html');
+                // $showAlert = true;
             }
         }
         else{
             $showError = "Password does not match!!";
         }
-    }
+    
 }
 ?>
 
@@ -71,8 +74,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
  <form action="signup.php" method="POST" id="sform">
     <div class="mb-3 col-md-5">
-        <label for="username" class="form-label">USERNAME</label>
-        <input type="text" class="form-control" id="username" name="username">
+        <label for="name" class="form-label">USERNAME</label>
+        <input type="text" class="form-control" id="name" name="name">
     </div>
     <div class="mb-3 col-md-5">
         <label for="email" class="form-label">EMAIL</label>
@@ -87,8 +90,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <input type="password" class="form-control" id="Password" name="password">
     </div>
     <div class="mb-3 col-md-5">
-        <label for="CPassword" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" id="CPassword" name="cpassword">
+        <label for="cpass" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="cpass" name="cpass">
     </div>
     
         <button type="submit" class="btn btn-primary">SIGNUP</button>
