@@ -4,19 +4,19 @@ $showError = false;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include 'dbcon.php';
-    $username = $_POST["username"];
+    $name = $_POST["name"];
     $password = $_POST["password"];
     
     
-        $sql1 = "Select * from users where username= '$username' AND password= '$password'";
+        $sql1 = "Select * from users where name= '$name' AND password= '$password'";
         $result1 = mysqli_query($conn,$sql1);
         $num = mysqli_num_rows($result1);
 
             if($num == 1){
                 $login = true;
-                // session_start();
-                // $_SESSION['loggedin'] = true;
-                // $_SESSION['username'] = $username;
+//                 session_start();
+//                 $_SESSION['loggedin'] = true;
+//                 $_SESSION['name'] = $name;
                 header ('location:main.html');
             }
             else{
@@ -61,9 +61,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <form action="login.php" method="POST" id="loginform">
     
-    <div class="mb-3 col-md-5">
-        <label for="username" class="form-label">USERNAME</label>
-        <input type="text" class="form-control" id="username" name="username">
+<div class="mb-3 col-md-5">
+        <label for="name" class="form-label">name</label>
+        <input type="text" class="form-control" id="name" name="name">
     </div>
     <div class="mb-3 col-md-5">
         <label for="Password" class="form-label">Password</label>
