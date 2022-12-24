@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 //                 session_start();
 //                 $_SESSION['loggedin'] = true;
 //                 $_SESSION['name'] = $name;
-                header ('location:main.html');
+                header ('location:main.php');
             }
             else{
                 $showError = "Invalid Details!!";
